@@ -1,15 +1,9 @@
 #!/usr/bin/env bash
 
-for filename in video_mkv*.part*; do
+for filename in video.bz2.part*; do
 	cat ${filename} >> video_mkv.tar.bz2;
 done;
 
-for filename in video_mp4*.part*; do
-	cat ${filename} >> video_mp4.tar.bz2;
-done;
+tar -xf video_mkv.tar.bz2;
 
-for x in mp4 mkv; do
-	tar -xf video_`echo $x`.tar.bz2;
-done;
-
-mv "Video Presentation" videos;
+mv "TLT Submission Video.mkv" "submission.mkv";
